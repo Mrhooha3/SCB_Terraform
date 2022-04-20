@@ -4,7 +4,13 @@ provider "aws" {
   secret_key    = ""
 }
 
-resource "aws_rds_database" "scb-mysql" {
-  ami           = ""
-  instance_type = "t2.micro"
+resource "aws_db_instance" "rds-mysql-db" {
+  allocated_storage = 20
+  engine            = "mysql"
+  engine_version    = "8.0.27"
+  instance_class    = "db.t2.micro"
+  db_name           = "rds-mysql-db"
+  storage_encrypted = "true"
+  username          = "DBAdmin1"
+  password          = "P@ssw0rd1234!"
 }

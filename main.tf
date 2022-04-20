@@ -12,5 +12,5 @@ resource "aws_db_instance" "rds-mysql-db" {
   db_name           = "rds-mysql-db"
   storage_encrypted = "true"
   username          = "DBAdmin1"
-  password          = "P@ssw0rd1234!"
+  password          = var.db_password
 }
